@@ -1,4 +1,5 @@
-package com.cyat.ecommerce
+package com.cyat.ecommerce;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 

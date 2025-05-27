@@ -1,4 +1,4 @@
-package com.cyat.ecommerce
+package com.cyat.ecommerce;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
