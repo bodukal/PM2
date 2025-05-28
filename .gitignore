@@ -14,3 +14,10 @@ target/
 .terraform/
 terraform.tfstate*
 *.tfvars
+
+.terraform/
+terraform.tfstate*
+*.tfvars
+crash.log
+*.backup
+
