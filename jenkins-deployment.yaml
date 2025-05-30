@@ -29,22 +29,20 @@ spec:
               mountPath: /var/lib/docker
           env:
             - name: DOCKER_HOST
-              value: tcp://localhost:2375
-
+              value: tcp://127.0.0.1:2375 # Explicitly use 127.0.0.1 instead of localhost
         - name: docker
           image: docker:24-dind
           securityContext:
             privileged: true
           args:
-            - "--host=tcp://0.0.0.0:2375"
+            - --host=tcp://0.0.0.0:2375
+            - --tls=false # Disable TLS for simplicity (secure in production if needed)
           volumeMounts:
             - name: docker-graph-storage
               mountPath: /var/lib/docker
-
       volumes:
         - name: jenkins-home
           persistentVolumeClaim:
             claimName: jenkins-pvc
         - name: docker-graph-storage
           emptyDir: {}
-
