@@ -15,7 +15,7 @@ spec:
         app: ecomm
     spec:
       containers:
-        - name: ecomm    # This must match the container name in kubectl command
-          image: bodukal/ecomm:latest
+        - name: ecomm   
+          image: bodukal/ecomm:17
           ports:
             - containerPort: 8080
