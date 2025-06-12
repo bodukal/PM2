@@ -1,22 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ecomm-app
+  name: ecommerce
   labels:
-    app: ecomm
+    app: ecommerce
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: ecomm
+      app: ecommerce
   template:
     metadata:
       labels:
-        app: ecomm
+        app: ecommerce
     spec:
       containers:
-      - name: ecomm
-        image: bodukal/ecomm:latest
-        ports:
-        - containerPort: 8080
-
+        - name: ecommerce
+          image: bodukal/ecomm:latest
+          ports:
+            - containerPort: 8080
