@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ecomm-app
+  name: ecomm
   labels:
     app: ecomm
 spec:
@@ -13,10 +13,14 @@ spec:
     metadata:
       labels:
         app: ecomm
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/path: "/actuator/prometheus"
+        prometheus.io/port: "8080"
     spec:
       containers:
-      - name: ecomm
-        image: bodukal/ecomm:latest
-        ports:
-        - containerPort: 8080
+        - name: ecomm
+          image: bodukal/ecomm:17
+          ports:
+            - containerPort: 8080
 

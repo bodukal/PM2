@@ -1,0 +1,14 @@
+# Expose all actuator endpoints
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+      base-path: /actuator
+  endpoint:
+    prometheus:
+      enabled: true
+
+# Optional: Customize port (default is 8080)
+# server:
+#   port: 8080
