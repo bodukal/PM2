@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ecommerce
+  name: ecomm          # matches deployment name in kubectl command
   labels:
-    app: ecommerce
+    app: ecomm
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: ecommerce
+      app: ecomm
   template:
     metadata:
       labels:
-        app: ecommerce
+        app: ecomm
     spec:
       containers:
-        - name: ecommerce
+        - name: ecomm    # This must match the container name in kubectl command
           image: bodukal/ecomm:latest
           ports:
             - containerPort: 8080
