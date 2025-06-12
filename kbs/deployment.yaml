@@ -23,4 +23,3 @@ spec:
           image: bodukal/ecomm:17
           ports:
             - containerPort: 8080
-
